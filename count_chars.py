@@ -5,20 +5,11 @@ frase = input("Digite uma frase: ")
     
 palavra = ""
 
-#organiza, remove whitespaces e conta o tamanho
-for char in frase:
-    if char == " ":
-        if palavra:  
-            palavras.append(palavra)
-            dicionario[palavra] = len(palavra)
-            palavra = ""
-                
-    else:
-            palavra += char
+# Split para separar
+palavras = frase.split()
 
-#necessário para o '?'
-if palavra: 
-    palavras.append(palavra)
+# contar a quantidade de letras
+for palavra in palavras:
     dicionario[palavra] = len(palavra)
 
 print(dicionario)
